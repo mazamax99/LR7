@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="459.0" prefWidth="522.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <AnchorPane prefHeight="343.0" prefWidth="399.0" style="" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <children>
+        <TableView fx:id="tableStudent" editable="false" focusTraversable="true" layoutX="0.0" layoutY="0.0" pickOnBounds="false" prefHeight="432.0" prefWidth="522.0" tableMenuButtonVisible="false" visible="true">
+          <columns>
+            <TableColumn id="idColumn" maxWidth="5000.0" minWidth="0.0" prefWidth="260.0" text="ФИО" visible="true" fx:id="idColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="152.0" text="Группа" visible="true" fx:id="groupColumn" />
+            <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="108.0" text="Средний бал" visible="true" fx:id="markColumn" />
+          </columns>
+        </TableView>
+        <CheckBox fx:id="idCheck" disable="false" layoutX="14.0" layoutY="432.0" mnemonicParsing="false" selected="true" text="ФИО" />
+        <CheckBox fx:id="groupCheck" layoutX="261.0" layoutY="433.0" mnemonicParsing="false" selected="true" text="Группа" />
+        <CheckBox fx:id="markCheck" layoutX="418.0" layoutY="432.0" mnemonicParsing="false" selected="true" text="Средний бал" />
+      </children>
+    </AnchorPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+</GridPane>
