@@ -4,9 +4,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Controller {
@@ -26,12 +24,21 @@ public class Controller {
     @FXML
     private CheckBox markCheck;
     @FXML
+    private Button addButton;
+    @FXML
+    private TextField textFirst;
+    @FXML
+    private TextField textSecond;
+    @FXML
+    private TextField textThird;
+    @FXML
     private void initialize() {
-        initData();
+       addButton.setOnAction(event -> initData());
         // устанавливаем тип и значение которое должно хранится в колонке
         idColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("id"));
         groupColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("group"));
         markColumn.setCellValueFactory(new PropertyValueFactory<Student, Integer>("mark"));
+
         tableStudent.setItems(studentData);
         idCheck.selectedProperty().addListener(new javafx.beans.value.ChangeListener<Boolean>() {
             @Override
@@ -58,9 +65,8 @@ public class Controller {
     }
 
     private void initData() {
-        studentData.add(new Student("Ммакс", "ПЭ-171", 100500));
-        studentData.add(new Student("Дарова", "ПЭ-171", 100500));
-        studentData.add(new Student("Тыц Тыц", "ПЭ-171", 123123123));
+        studentData.add(new Student(textFirst.getText(), textSecond.getText(), Integer.parseInt(textThird.getText())));
+
     }
 
 }
