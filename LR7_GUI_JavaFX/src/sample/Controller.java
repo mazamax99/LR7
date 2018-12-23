@@ -38,7 +38,6 @@ public class Controller {
         idColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("id"));
         groupColumn.setCellValueFactory(new PropertyValueFactory<Student, String>("group"));
         markColumn.setCellValueFactory(new PropertyValueFactory<Student, Integer>("mark"));
-
         tableStudent.setItems(studentData);
         idCheck.selectedProperty().addListener(new javafx.beans.value.ChangeListener<Boolean>() {
             @Override
